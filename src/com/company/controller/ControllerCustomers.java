@@ -114,4 +114,10 @@ public class ControllerCustomers {
         }
         return null;
     }
+    public int nextvlblIdCustomer(){
+        if(listaClienti.size() !=0){
+            return listaClienti.get(listaClienti.size()-1).getId()+1;
+        }
+        return 1;
+    }
 }

@@ -46,5 +46,23 @@ public class ViewLogin {
             System.out.println("Ati gresit mailul sau parola");
         }
     }
+
+    public void signup(){
+        System.out.println("introduceti emailul");
+        String mail=scanner.nextLine();
+        System.out.println("Alegeti o parola");
+        String pass=scanner.nextLine();
+        System.out.println("Introduceti numele dvs");
+        String name=scanner.nextLine();
+        System.out.println("Introduceti adresa de livrare");
+        String adress=scanner.nextLine();
+        System.out.println("Introduceti tara");
+        String country=scanner.nextLine();
+        System.out.println("Introduceti numarul de telefon");
+        int telefon=Integer.parseInt(scanner.nextLine());
+        Customers customers=new Customers(controllerCustomers.nextvlblIdCustomer(),mail,pass,name,adress,country,telefon);
+        controllerCustomers.addCustomers(customers);
+        controllerCustomers.toSaveCustomer();
+    }
 }
 
