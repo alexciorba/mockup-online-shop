@@ -1,6 +1,7 @@
 package com.company.view;
 
 import com.company.controller.ControllerCustomers;
+import com.company.model.Customers;
 
 import java.util.Scanner;
 
@@ -34,8 +35,16 @@ public class ViewLogin {
         String mail=scanner.nextLine();
         System.out.println("Introduceti parola");
         String pass=scanner.nextLine();
-        //fac o functie in controller client care verifica daca exista un client cu acel mail si parola
+        //TODO : facem o functie care primeste mail si returneza id ul
 
+        Customers customers=controllerCustomers.verificareMail(mail,pass);
+        if(customers !=null){
+            ViewUser viewUser=new ViewUser(customers);
+            viewUser.play();
+        }
+        else {
+            System.out.println("Ati gresit mailul sau parola");
+        }
     }
 }
 

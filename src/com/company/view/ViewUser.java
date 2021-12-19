@@ -25,12 +25,16 @@ public class ViewUser {
    private  Customers customers;
    private ControllerOrderDetails controllerOrderDetails;
 
-    public ViewUser(){
+    public ViewUser( Customers customers){
 
-         customers= new Customers("20,alex@,123,Alex,Str Retezat,Romania,073939");
+         customers=this.customers;
+
          scanner=new Scanner(System.in);
+
          controllerProducts=new ControllerProducts();
+
          controllerOrders= new ControllerOrders();
+
          controllerOrderDetails= new ControllerOrderDetails();
          orders= new Orders(controllerOrders.nextIdVlblOrder(),customers.getId(),0,"alex@","20.12.2021","disponibl");
     }

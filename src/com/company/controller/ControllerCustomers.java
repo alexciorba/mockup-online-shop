@@ -105,4 +105,13 @@ public class ControllerCustomers {
 
         }
     }
+    //fac o functie in controller client care verifica daca exista un client cu acel mail si parola
+    public Customers verificareMail(String mail,String pass){
+        for(Customers customers : listaClienti){
+            if(customers.getEmail().equals(mail)&&customers.getPassword().equals(pass)){
+                return customers;
+            }
+        }
+        return null;
+    }
 }
